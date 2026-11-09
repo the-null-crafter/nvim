@@ -31,9 +31,9 @@ o.completeopt = { 'menu', 'menuone', 'noselect', 'popup' }
 o.clipboard = 'unnamedplus'
 
 if vim.env.SSH_TTY then
-  vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-      require('vim.ui.clipboard.osc52').copy('+')(vim.v.event.regcontents)
-    end,
-  })
+    vim.api.nvim_create_autocmd('TextYankPost', {
+        callback = function()
+            require('vim.ui.clipboard.osc52').copy('+')(vim.v.event.regcontents)
+        end,
+    })
 end
